@@ -1,0 +1,46 @@
+slider:
+  subtitle: "The Exclusive Brotherhood"
+  title: "Welcome to ChadCon"
+  description: "The private social group exclusively for people named Chad. Verify your identity, connect with fellow Chads worldwide, and join exclusive events reserved for the most legendary name in history."
+  button_text: "Verify Your Name"
+  button_url: "/verify/"
+
+intro:
+  subtitle: "What We Offer"
+  title: "The Ultimate Chad Experience"
+  description: "ChadCon brings together verified Chads from around the world for networking, events, and camaraderie. Here's what makes us different."
+  items:
+    - title: "Verify Your Identity"
+      image: "images/about/image-1.jpg"
+      description: "Use ID.me to prove your first name is Chad. Our verification process ensures every member is a genuine, certified Chad. No impostors allowed."
+    - title: "Exclusive Events"
+      image: "images/about/image-2.jpg"
+      description: "From local meetups to the annual ChadCon gathering, attend events where every single person in the room shares your legendary name."
+    - title: "The Chad Network"
+      image: "images/about/image-3.jpg"
+      description: "Connect with Chads in every industry, every state, and every country. The Chad network is real and it's powerful."
+    - title: "Stay Informed"
+      image: "images/about/image-4.jpg"
+      description: "Subscribe to our newsletter for event announcements, Chad news, and exclusive content delivered straight to your inbox."
+
+video:
+  title: "The Chad Community by the Numbers"
+  image: "images/bg/bg-3.jpg"
+  counters:
+    - count: "1200"
+      label: "Members Verified"
+    - count: "24"
+      label: "Events Hosted"
+    - count: "48"
+      label: "States Represented"
+    - count: "12"
+      label: "Countries"
+
+cta:
+  title: "Are You a Chad? Prove It."
+  button_text: "Verify with ID.me"
+  button_url: "/verify/"
+
+newsletter:
+  title: "Never Miss a Chad Event"
+  description: "The ChadCon community is growing fast. From regional meetups to the legendary annual gathering, there's always something happening. Subscribe to our newsletter so you never miss an invitation, an announcement, or a chance to meet your fellow Chads in person."

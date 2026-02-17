@@ -1,0 +1,77 @@
+{{ define "main" }}
+{{ partial "page-title.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="contact-content">
+          <h2 class="mb-5">{{ .Params.heading | default "Get in Touch" }}</h2>
+          <ul class="address-block list-unstyled">
+            {{ with .Site.Params.email }}
+            <li>
+              <h6 class="mb-2">Email Us</h6>
+              {{ . }}
+            </li>
+            {{ end }}
+          </ul>
+          <ul class="social-icons list-inline mt-5">
+            <li><h6 class="mb-3">Find us on social media</h6></li>
+            {{ range .Site.Params.social }}
+            <li class="list-inline-item"><a href="{{ .url }}" target="_blank"><i class="fa-brands fa-{{ .icon }} mr-2"></i></a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-6 offset-lg-1">
+        <div class="contact-info p-4 rounded" style="background: #f8f9fa;">
+          <h4 class="mb-3">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="{{ "verify/" | relURL }}"><i class="fa-solid fa-shield-halved mr-2"></i> Verify Your Name</a></li>
+            <li class="mb-2"><a href="{{ "event/" | relURL }}"><i class="fa-solid fa-calendar mr-2"></i> Upcoming Events</a></li>
+            <li class="mb-2"><a href="{{ "newsletter/" | relURL }}"><i class="fa-solid fa-envelope mr-2"></i> Subscribe to Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-wrap pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form action="{{ .Site.Params.formspree_url | default "#" }}" method="POST" class="contact__form">
+          <span class="text-color">Send a message</span>
+          <h3 class="text-md mb-4">Contact Form</h3>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Your Name *</label>
+              <input name="name" type="text" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Your Email *</label>
+              <input name="email" type="email" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Subject *</label>
+              <input name="subject" type="text" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Your Phone</label>
+              <input name="phone" type="tel" class="form-control">
+            </div>
+            <div class="col-12 mb-3">
+              <label>Your Message *</label>
+              <textarea name="message" class="form-control" rows="6"></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-main rounded" type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

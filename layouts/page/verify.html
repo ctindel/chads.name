@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{ partial "page-title.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="verify-intro mb-5">
+          <i class="fa-solid fa-shield-halved mb-4" style="font-size: 64px; color: #D4AF37;"></i>
+          <h2 class="mb-4">Prove You're a Real Chad</h2>
+          <p class="lead mb-4">ChadCon is an exclusive community for people whose legal first name is Chad. We use ID.me — a trusted identity verification service used by government agencies and major organizations — to verify your name.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        {{ .Content }}
+
+        <div class="verify-steps mt-5">
+          <h3 class="mb-4">How It Works</h3>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="text-center p-4">
+                <div class="step-number mb-3"><span class="badge badge-lg" style="background: #D4AF37; color: #1B2A4A; font-size: 24px; width: 50px; height: 50px; line-height: 50px; border-radius: 50%; display: inline-block;">1</span></div>
+                <h5>Click Verify</h5>
+                <p>Click the button below to start the ID.me verification process.</p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="text-center p-4">
+                <div class="step-number mb-3"><span class="badge badge-lg" style="background: #D4AF37; color: #1B2A4A; font-size: 24px; width: 50px; height: 50px; line-height: 50px; border-radius: 50%; display: inline-block;">2</span></div>
+                <h5>Confirm Identity</h5>
+                <p>ID.me verifies your government-issued ID to confirm your first name is Chad.</p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="text-center p-4">
+                <div class="step-number mb-3"><span class="badge badge-lg" style="background: #D4AF37; color: #1B2A4A; font-size: 24px; width: 50px; height: 50px; line-height: 50px; border-radius: 50%; display: inline-block;">3</span></div>
+                <h5>Join the Brotherhood</h5>
+                <p>Once verified, you gain full access to Chad events, the Discord, and the newsletter.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5 mb-5">
+          <a href="https://api.id.me/oauth/authorize?client_id={{ .Site.Params.idme_client_id }}&redirect_uri={{ .Site.BaseURL }}verify/callback&response_type=code&scope=openid" class="btn btn-main btn-lg rounded" style="font-size: 20px; padding: 15px 40px;">
+            <i class="fa-solid fa-id-card mr-2"></i> Verify with ID.me
+          </a>
+          <p class="mt-3 text-muted"><small>Powered by ID.me — trusted by the VA, IRS, and 600+ organizations.</small></p>
+        </div>
+
+        <div class="alert alert-info mt-4">
+          <h5><i class="fa-solid fa-circle-info mr-2"></i>Developer Note</h5>
+          <p class="mb-0">Full OAuth 2.0 token exchange requires a backend service (e.g., Cloudflare Workers, Netlify Functions, or AWS Lambda). The ID.me button above links to the OAuth authorization URL with a placeholder client ID. Once the ID.me developer account is configured, replace <code>PLACEHOLDER_CLIENT_ID</code> in <code>config.toml</code> and set up the callback endpoint.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

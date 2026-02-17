@@ -1,0 +1,112 @@
+baseURL = "https://chads.name/"
+languageCode = "en-us"
+title = "ChadCon"
+theme = "altru"
+summaryLength = 30
+buildFuture = true
+
+[pagination]
+  pagerSize = 9
+
+[params]
+  description = "ChadCon — The exclusive private social group for people named Chad. Verify your identity, join the brotherhood, and attend Chad-only events."
+  author = "ChadCon"
+  logo = "images/chad_logo.png"
+  phone = ""
+  email = "info@chads.name"
+  contact_address = ""
+  footer_address = ""
+  mailchimp_url = "https://chads.us00.list-manage.com/subscribe/post?u=PLACEHOLDER&id=PLACEHOLDER"
+  idme_client_id = "PLACEHOLDER_CLIENT_ID"
+
+  [[params.social]]
+    icon = "instagram"
+    name = "Instagram"
+    url = "https://instagram.com/chadsname"
+  [[params.social]]
+    icon = "x-twitter"
+    name = "X / Twitter"
+    url = "https://x.com/chadsname"
+  [[params.social]]
+    icon = "discord"
+    name = "Discord"
+    url = "https://discord.gg/chadsname"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# ---------------------------------------------------------------
+# Main Menu
+# ---------------------------------------------------------------
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
+  name = "Events"
+  url = "/event/"
+  weight = 3
+
+[[menu.main]]
+  name = "Verify Your Name"
+  url = "/verify/"
+  weight = 4
+
+[[menu.main]]
+  name = "Newsletter"
+  url = "/newsletter/"
+  weight = 5
+
+[[menu.main]]
+  name = "News"
+  url = "/blog/"
+  weight = 6
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 7
+
+[[menu.main]]
+  name = "Verify Now"
+  url = "/verify/"
+  weight = 8
+  [menu.main.params]
+    cta = true
+
+# ---------------------------------------------------------------
+# Footer Menu
+# ---------------------------------------------------------------
+
+[[menu.footer]]
+  name = "About"
+  url = "/about/"
+  weight = 1
+
+[[menu.footer]]
+  name = "Events"
+  url = "/event/"
+  weight = 2
+
+[[menu.footer]]
+  name = "Verify"
+  url = "/verify/"
+  weight = 3
+
+[[menu.footer]]
+  name = "Newsletter"
+  url = "/newsletter/"
+  weight = 4
+
+[[menu.footer]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 5

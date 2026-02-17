@@ -1,0 +1,663 @@
+/* ==========================================================================
+   ChadCon (chads.name) — Dark Navy + Gold Color Scheme
+   Overrides for Altru theme (style.css)
+   ========================================================================== */
+
+/* ------------------------------------------------------------------
+   Override CSS Custom Properties (Design Tokens)
+   The theme uses var(--primary) etc. everywhere, so overriding
+   these tokens changes the entire color scheme.
+   ------------------------------------------------------------------ */
+:root {
+  --primary: #D4AF37;
+  --secondary: #2A3F6A;
+  --black: #E8E8E8;
+  --body-color: #C0C0C0;
+  --paragraph-color: #B0B0B0;
+  --white: #ffffff;
+  --light-bg: #162240;
+  --footer-bg: #0D1A2F;
+  --font-body: 'Montserrat', sans-serif;
+  --font-heading: 'Bitter', serif;
+}
+
+/* ------------------------------------------------------------------
+   Body & Global Typography
+   ------------------------------------------------------------------ */
+body {
+  background-color: #111D32 !important;
+  color: #C0C0C0 !important;
+}
+
+p {
+  color: #B0B0B0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #E8E8E8 !important;
+}
+
+a {
+  color: #D4AF37 !important;
+}
+
+a:hover, a:focus {
+  color: #F5D06C !important;
+}
+
+/* ------------------------------------------------------------------
+   Header Top Bar
+   ------------------------------------------------------------------ */
+.header-top {
+  background: #0D1A2F !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+.header-top-social a {
+  color: #D4AF37 !important;
+}
+
+.header-top-social a:hover {
+  color: #F5D06C !important;
+}
+
+/* ------------------------------------------------------------------
+   Navigation — must use #navbar to match theme specificity
+   ------------------------------------------------------------------ */
+#navbar {
+  background: #1B2A4A !important;
+  border-bottom: 2px solid #D4AF37 !important;
+}
+
+#navbar .navbar-brand-text {
+  color: #D4AF37 !important;
+}
+
+#navbar .navbar-nav .nav-item .nav-link {
+  color: #E8E8E8 !important;
+}
+
+#navbar .navbar-nav .nav-item .nav-link:hover,
+#navbar .navbar-nav .nav-item.active .nav-link {
+  color: #D4AF37 !important;
+}
+
+#navbar .navbar-nav .nav-item .nav-link.nav-cta {
+  background: #D4AF37 !important;
+  color: #1B2A4A !important;
+  font-weight: 700;
+}
+
+#navbar .navbar-nav .nav-item .nav-link.nav-cta:hover {
+  background: #F5D06C !important;
+  color: #1B2A4A !important;
+}
+
+#navbar .navbar-toggler span {
+  background: #D4AF37 !important;
+}
+
+#navbar .navbar-nav .dropdown-menu {
+  background: #1B2A4A !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-top: 3px solid #D4AF37 !important;
+}
+
+#navbar .navbar-nav .dropdown-menu .dropdown-item {
+  color: #E8E8E8 !important;
+}
+
+#navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+#navbar .navbar-nav .dropdown-menu .dropdown-item.active {
+  color: #D4AF37 !important;
+  background: rgba(212, 175, 55, 0.1) !important;
+}
+
+@media (max-width: 991px) {
+  #navbar .navbar-nav .nav-item .nav-link {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Slider / Hero Section
+   ------------------------------------------------------------------ */
+.slider {
+  background: url('../images/bg/banner.jpg') no-repeat center center !important;
+  background-size: cover !important;
+}
+
+.slider::before {
+  background: rgba(13, 26, 47, 0.75) !important;
+}
+
+.slider .slider-content {
+  background: rgba(13, 26, 47, 0.85) !important;
+  border-radius: 12px;
+  padding: 40px 50px;
+  display: inline-block;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.slider .slider-content span {
+  color: #D4AF37 !important;
+}
+
+.slider .slider-content h1 {
+  color: #D4AF37 !important;
+}
+
+.slider .slider-content p {
+  color: #E8E8E8 !important;
+}
+
+/* ------------------------------------------------------------------
+   Buttons
+   ------------------------------------------------------------------ */
+.btn-main {
+  background: #D4AF37 !important;
+  color: #1B2A4A !important;
+  border-color: #D4AF37 !important;
+  font-weight: 700 !important;
+}
+
+.btn-main:hover,
+.btn-main:focus {
+  background: #F5D06C !important;
+  border-color: #F5D06C !important;
+  color: #1B2A4A !important;
+}
+
+.btn-main-2 {
+  background: transparent !important;
+  color: #D4AF37 !important;
+  border: 2px solid #D4AF37 !important;
+}
+
+.btn-main-2:hover,
+.btn-main-2:focus {
+  background: #D4AF37 !important;
+  border-color: #D4AF37 !important;
+  color: #1B2A4A !important;
+}
+
+/* ------------------------------------------------------------------
+   Sections — general
+   ------------------------------------------------------------------ */
+.section {
+  background-color: #111D32 !important;
+}
+
+.section-title .text-color,
+span.text-color,
+.text-color {
+  color: #D4AF37 !important;
+}
+
+.content-title {
+  color: #E8E8E8 !important;
+}
+
+/* ------------------------------------------------------------------
+   Intro / Cause Cards
+   ------------------------------------------------------------------ */
+.cause-item {
+  background: #1B2A4A !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.15) !important;
+  transition: all 0.3s ease;
+}
+
+.cause-item:hover {
+  border-color: #D4AF37 !important;
+  transform: translateY(-3px);
+}
+
+.cause-item .card-body h4,
+.cause-item .card-body h3 {
+  color: #E8E8E8 !important;
+}
+
+.cause-item .card-body p {
+  color: #B0B0B0 !important;
+}
+
+/* ------------------------------------------------------------------
+   Counter / Stats Section (theme class = .video)
+   Theme hardcodes: background: url('../images/bg/3.jpg')
+   ------------------------------------------------------------------ */
+.video {
+  background: #0D1A2F !important;
+  background-image: none !important;
+}
+
+.video::before {
+  background: transparent !important;
+}
+
+.video h2 {
+  color: #D4AF37 !important;
+}
+
+.counter-stat {
+  color: #D4AF37 !important;
+  font-size: 42px !important;
+}
+
+.counter-item-2 p {
+  color: #E8E8E8 !important;
+}
+
+/* ------------------------------------------------------------------
+   CTA Block
+   Theme hardcodes: background: url('../images/bg/banner.jpg')
+   ------------------------------------------------------------------ */
+.cta-block {
+  background: linear-gradient(135deg, #1B2A4A 0%, #0D1A2F 100%) !important;
+  background-image: none !important;
+  border-top: 3px solid #D4AF37;
+  border-bottom: 3px solid #D4AF37;
+}
+
+.cta-block::before {
+  background: transparent !important;
+}
+
+.cta-block h2 {
+  color: #D4AF37 !important;
+}
+
+.cta-block p {
+  color: #E8E8E8 !important;
+}
+
+/* ------------------------------------------------------------------
+   Events
+   ------------------------------------------------------------------ */
+.event-item {
+  background: #1B2A4A !important;
+  border: 1px solid rgba(212, 175, 55, 0.15) !important;
+}
+
+.event-item .card-body h3 a {
+  color: #E8E8E8 !important;
+}
+
+.event-item .card-body h3 a:hover {
+  color: #D4AF37 !important;
+}
+
+.event-item .card-body p {
+  color: #B0B0B0 !important;
+}
+
+.event-item .list-group-item {
+  background: #1B2A4A !important;
+  color: #E8E8E8 !important;
+  border-color: rgba(212, 175, 55, 0.15) !important;
+}
+
+/* ------------------------------------------------------------------
+   Blog Items
+   ------------------------------------------------------------------ */
+.blog-item {
+  background: #1B2A4A !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(212, 175, 55, 0.15) !important;
+}
+
+.blog-item:hover {
+  border-color: #D4AF37 !important;
+}
+
+.blog-item .card-body h3 a {
+  color: #E8E8E8 !important;
+}
+
+.blog-item .card-body h3 a:hover {
+  color: #D4AF37 !important;
+}
+
+.blog-item .card-body .text-body {
+  color: #B0B0B0 !important;
+}
+
+/* ------------------------------------------------------------------
+   Newsletter / Volunteer Section
+   Theme uses .volunteer::before with var(--secondary) for right panel bg
+   ------------------------------------------------------------------ */
+.volunteer {
+  background: #0D1A2F !important;
+}
+
+.volunteer::before {
+  background: #1B2A4A !important;
+}
+
+.volunteer-content h2 {
+  color: #D4AF37 !important;
+}
+
+.volunteer-content p {
+  color: #E8E8E8 !important;
+}
+
+.volunteer-form-wrap {
+  background: #162240 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.volunteer-form-wrap span,
+.volunteer-form-wrap h2 {
+  color: #D4AF37 !important;
+}
+
+.volunteer-form-wrap .form-control,
+.mailchimp-form .form-control {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #E8E8E8 !important;
+  height: 50px;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.volunteer-form-wrap .form-control::placeholder,
+.mailchimp-form .form-control::placeholder {
+  color: #777 !important;
+}
+
+.volunteer-form-wrap .form-control:focus,
+.mailchimp-form .form-control:focus {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25) !important;
+}
+
+/* ------------------------------------------------------------------
+   Footer
+   Theme uses: footer { background: var(--footer-bg) }
+   ------------------------------------------------------------------ */
+footer {
+  background: #0D1A2F !important;
+  border-top: 2px solid #D4AF37;
+}
+
+.footer-widget h4 {
+  color: #D4AF37 !important;
+}
+
+.footer-widget p {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.footer-menu li a {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.footer-menu li a::before {
+  color: #D4AF37 !important;
+}
+
+.footer-menu li a:hover {
+  color: #D4AF37 !important;
+}
+
+.footer-socials a,
+.footer-socials .list-inline-item a {
+  background: rgba(212, 175, 55, 0.15) !important;
+  color: #D4AF37 !important;
+}
+
+.footer-socials a:hover {
+  background: #D4AF37 !important;
+  color: #1B2A4A !important;
+}
+
+.footer-btm {
+  border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+.footer-btm small {
+  color: #888 !important;
+}
+
+/* ------------------------------------------------------------------
+   Page Title
+   ------------------------------------------------------------------ */
+section.py-4 {
+  background: #1B2A4A !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+section.py-4 h1 {
+  color: #D4AF37 !important;
+}
+
+/* ------------------------------------------------------------------
+   About Page
+   ------------------------------------------------------------------ */
+.about-page {
+  background: #111D32 !important;
+}
+
+.about-item-content h2,
+.about-item-content h3,
+.about-item-content h4 {
+  color: #D4AF37 !important;
+}
+
+.about-item-content p,
+.about-item-content li {
+  color: #B0B0B0 !important;
+}
+
+.about-item-content strong {
+  color: #E8E8E8 !important;
+}
+
+.feature-inner {
+  background: #1B2A4A !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(212, 175, 55, 0.15) !important;
+}
+
+.feature-inner i {
+  color: #D4AF37 !important;
+}
+
+.feature-inner h4 {
+  color: #E8E8E8 !important;
+}
+
+.feature-inner p {
+  color: #B0B0B0 !important;
+}
+
+/* ------------------------------------------------------------------
+   Verify Page
+   ------------------------------------------------------------------ */
+.verify-intro i {
+  color: #D4AF37 !important;
+}
+
+.verify-steps h3 {
+  color: #D4AF37 !important;
+}
+
+.alert-info {
+  background: #1B2A4A !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  color: #E8E8E8 !important;
+}
+
+.alert-info h5 {
+  color: #D4AF37 !important;
+}
+
+.alert-info p {
+  color: #B0B0B0 !important;
+}
+
+.alert-info code {
+  color: #F5D06C !important;
+}
+
+/* ------------------------------------------------------------------
+   Contact Page
+   ------------------------------------------------------------------ */
+.contact-content h2 {
+  color: #D4AF37 !important;
+}
+
+.address-block li {
+  color: #E8E8E8 !important;
+}
+
+.address-block h6 {
+  color: #D4AF37 !important;
+}
+
+.contact__form span.text-color {
+  color: #D4AF37 !important;
+}
+
+.contact__form h3 {
+  color: #E8E8E8 !important;
+}
+
+.contact__form label {
+  color: #E8E8E8 !important;
+}
+
+.contact__form .form-control {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #E8E8E8 !important;
+}
+
+.contact__form .form-control:focus {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25) !important;
+}
+
+.contact-wrap {
+  background: #111D32 !important;
+}
+
+.contact-info {
+  background: #1B2A4A !important;
+}
+
+.contact-info h4 {
+  color: #D4AF37 !important;
+}
+
+/* ------------------------------------------------------------------
+   Single Post / Event Pages
+   ------------------------------------------------------------------ */
+.single-details {
+  color: #E8E8E8 !important;
+}
+
+.single-details h2,
+.single-details h3,
+.single-details h4 {
+  color: #D4AF37 !important;
+}
+
+.single-details p,
+.single-details li {
+  color: #B0B0B0 !important;
+}
+
+.single-details strong {
+  color: #E8E8E8 !important;
+}
+
+.single-blog-item .blog-item-meta .text-color {
+  color: #D4AF37 !important;
+}
+
+.share-option {
+  background: #1B2A4A !important;
+}
+
+.share-option strong {
+  color: #E8E8E8 !important;
+}
+
+.share-option a {
+  color: #E8E8E8 !important;
+}
+
+.share-option a:hover {
+  color: #D4AF37 !important;
+}
+
+.event-meta span {
+  color: #B0B0B0 !important;
+}
+
+.event-meta i {
+  color: #D4AF37 !important;
+}
+
+/* ------------------------------------------------------------------
+   Sidebar (blog)
+   ------------------------------------------------------------------ */
+.sidebar .widget {
+  background: #1B2A4A !important;
+  border: 1px solid rgba(212, 175, 55, 0.15) !important;
+}
+
+.sidebar .widget h4 {
+  color: #D4AF37 !important;
+}
+
+/* ------------------------------------------------------------------
+   Pagination
+   ------------------------------------------------------------------ */
+.pagination .page-link {
+  background: #1B2A4A !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  color: #D4AF37 !important;
+}
+
+.pagination .page-item.active .page-link {
+  background: #D4AF37 !important;
+  border-color: #D4AF37 !important;
+  color: #1B2A4A !important;
+}
+
+/* ------------------------------------------------------------------
+   Scrollbar
+   ------------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D1A2F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------
+   Responsive tweaks
+   ------------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .slider .slider-content {
+    padding: 20px 25px;
+  }
+
+  .slider .slider-content h1 {
+    font-size: 1.8rem !important;
+  }
+}

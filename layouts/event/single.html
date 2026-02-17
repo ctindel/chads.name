@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "page-title.html" . }}
+
+<section class="section page-title-next cause-single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="single-details">
+          {{ with .Params.image }}
+          <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-100">
+          {{ end }}
+
+          <div class="event-meta my-4">
+            {{ with .Params.date_text }}<span class="mr-4"><i class="fa-solid fa-calendar mr-1"></i> {{ . }}</span>{{ end }}
+            {{ with .Params.location }}<span class="mr-4"><i class="fa-solid fa-location-dot mr-1"></i> {{ . }}</span>{{ end }}
+            {{ with .Params.organizer }}<span><i class="fa-solid fa-user mr-1"></i> {{ . }}</span>{{ end }}
+          </div>
+
+          {{ .Content }}
+
+          <div class="d-sm-flex justify-content-between align-items-center text-center border-top pt-4 mt-5">
+            <h4 class="my-3">Want to attend? Verify your name first.</h4>
+            <a href="{{ "verify/" | relURL }}" class="btn btn-main-2 rounded">Verify Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

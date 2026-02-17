@@ -1,0 +1,183 @@
+{{ define "main" }}
+{{ $data := .Site.Data.homepage }}
+
+<!-- Slider Start -->
+<section class="slider">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-md-10">
+        <div class="slider-content text-center">
+          <span class="d-block mb-3 text-white text-capitalize">{{ $data.slider.subtitle }}</span>
+          <h1 class="mb-4">{{ $data.slider.title }}</h1>
+          <p class="mb-5">{{ $data.slider.description }}</p>
+          <a href="{{ $data.slider.button_url | default "/verify/" | relURL }}" class="btn btn-main rounded">{{ $data.slider.button_text | default "Verify Your Name" }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Slider End -->
+
+<!-- Intro Section Start -->
+<section class="section causes">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-8">
+        <div class="section-title text-center">
+          <span class="text-color">{{ $data.intro.subtitle }}</span>
+          <h2 class="mt-3 mb-4 content-title">{{ $data.intro.title }}</h2>
+          <p class="mb-4">{{ $data.intro.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {{ range $data.intro.items }}
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="cause-item text-center">
+          <img src="{{ .image | relURL }}" class="w-100" alt="{{ .title }}">
+          <div class="card-body">
+            <h4 class="mb-3">{{ .title }}</h4>
+            <p class="card-text mb-4">{{ .description }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- Intro Section End -->
+
+<!-- Counter Section Start -->
+<section class="section video">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="mt-3 mb-5 text-lg text-white">{{ $data.video.title }}</h2>
+      </div>
+    </div>
+    <div class="counter-section">
+      <div class="row">
+        {{ range $data.video.counters }}
+        <div class="col-lg-3 col-md-6">
+          <div class="counter-item-2 pt-5 text-center">
+            <span class="counter-stat font-weight-bold text-color">{{ .count }}</span>
+            <p>{{ .label }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Counter Section End -->
+
+<!-- CTA Block Start -->
+<div class="cta-block section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="cta-content text-center">
+          <h2 class="text-white text-lg mb-5 mt-3">{{ $data.cta.title }}</h2>
+          <a href="{{ $data.cta.button_url | default "/verify/" | relURL }}" class="btn btn-main rounded">{{ $data.cta.button_text | default "Verify Now" }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CTA Block End -->
+
+<!-- Upcoming Events Start -->
+{{ $events := where .Site.RegularPages "Section" "event" }}
+{{ if $events }}
+<section class="section event">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+        <div class="section-title">
+          <span class="h6 text-color">Upcoming Events</span>
+          <h2 class="mt-3 content-title">Chad Gatherings Near You</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {{ range first 3 $events }}
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card event-item shadow-none">
+          {{ with .Params.image }}
+          <img src="{{ . | relURL }}" class="w-100" alt="{{ $.Title }}">
+          {{ end }}
+          <div class="card-body">
+            <h3 class="mb-3"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p>{{ .Summary | truncate 100 }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            {{ with .Params.date_text }}<li class="list-group-item"><strong>Date : </strong>{{ . }}</li>{{ end }}
+            {{ with .Params.location }}<li class="list-group-item"><strong>Location : </strong>{{ . }}</li>{{ end }}
+          </ul>
+          <a href="{{ .RelPermalink }}" class="btn btn-main-2 d-block text-center">Learn More</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- Upcoming Events End -->
+
+<!-- Latest News Start -->
+{{ $posts := where .Site.RegularPages "Section" "blog" }}
+{{ if $posts }}
+<section class="section latest-blog">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+        <div class="section-title">
+          <span class="h6 text-color">Latest News</span>
+          <h2 class="mt-3 content-title">Updates from the Chad Community</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {{ range first 3 $posts }}
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog-item">
+          {{ with .Params.image }}
+          <a href="{{ $.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-100"></a>
+          {{ end }}
+          <div class="card-body mt-2">
+            <span class="text-sm text-color text-uppercase font-weight-bold">{{ .Date.Format "January 2, 2006" }}</span>
+            <h3 class="mb-3"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p class="mb-4"><a href="{{ .RelPermalink }}" class="text-body">{{ .Summary | truncate 120 }}</a></p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- Latest News End -->
+
+<!-- Newsletter Section Start -->
+<div class="volunteer section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="volunteer-content">
+          <h2 class="text-lg mb-4 mt-3">{{ $data.newsletter.title }}</h2>
+          <p>{{ $data.newsletter.description }}</p>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="volunteer-form-wrap">
+          <span class="text-white">Stay Connected</span>
+          <h2 class="mb-5 text-lg text-white">Join the Newsletter</h2>
+          {{ partial "mailchimp-signup.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Newsletter Section End -->
+
+{{ end }}
